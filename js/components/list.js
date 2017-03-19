@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM  from 'react-dom';
 import Card from './card';
 
 function Form(props){
@@ -17,11 +18,11 @@ class List extends React.Component{
         this.onAddInputChange = this.onAddInputChange.bind(this);
     }
     
-	function onAddInputChange(){
+	onAddInputChange(){
 		console.log("onAddInputChange is working");
 	}
 
-	function onAddSubmit(){
+	onAddSubmit(){
 		console.log("onAddSubmit is working");
 	}
 
@@ -33,7 +34,7 @@ class List extends React.Component{
 	              return <Card text={cardText} />})
 	          }
 	        </div>    //this.onAddInputChange refers to line 23 function
-	        <Form onAddInputChange={this.onAddInputChange} onAddSubmit={event.preventDefault(); this.onAddSubmit} />
+	        <Form onAddInputChange={this.onAddInputChange} onAddSubmit={() => {event.preventDefault(); this.onAddSubmit;}} />
 	      </div>
   	    );	
     }
