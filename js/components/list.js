@@ -2,28 +2,18 @@ import React from 'react';
 import Card from './card';
 
 function Form(props){
-    return <form>
+    return <form onSubmit={props.onAddSubmit}>
            <input onChange={props.onAddInputChange} type="text" />
-           <input onChange={props.onAddSubmit} type="submit" />
+           <input type="submit" />
        </form>;
 }
 
 
 
 export default class List extends React.Component {
-
     constructor(props) {
        super(props);
-       this.onAddInputChange = this.onAddInputChange.bind(this);
    }
-   
-    onAddInputChange(){
-        console.log("onAddInputChange is working");
-    }
-
-    onAddSubmit(){
-        console.log("onAddSubmit is working");
-    }
 
    render(){
        return (
@@ -33,7 +23,8 @@ export default class List extends React.Component {
                   return <Card text={cardText} />})
               }
             </div>
-            <Form onAddInputChange={this.onAddInputChange} onAddSubmit={(event) => { event.preventDefault(); this.onAddSubmit;}} />
+            <Form onAddInputChange={this.props.onAddInputChange} 
+                  onAddSubmit={this.props.onAddSubmit} />
           </div>
          );    
    }
