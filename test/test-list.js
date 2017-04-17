@@ -17,12 +17,12 @@ describe('List component', function() {
             cards={cards} />);
         const result = renderer.getRenderOutput();
 
-        //props.title equals prop obj being passed
-        console.log("list testing");
-        console.log({result, props: result.props.children});
-        result.props.title.should.equal(title);
+        //test for title within nested divs
+        var listTitle = result.props.children[0].props.children;
+        listTitle.should.equal(title);
 
         //check for the right num of cards
-
+        var cardComponents = result.props.children[1].props.children;
+        cardComponents.length.should.equal(cards.length);
     });
 });

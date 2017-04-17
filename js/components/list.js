@@ -16,20 +16,16 @@ export default class List extends React.Component {
    }
 
    render(){
-      console.log("props", this.props);
+      // console.log("props", this.props);
        return (
           <div>
             <div className="list">{this.props.title}</div>
-              <div className="list">{this.props.cards.map(function(cardText){
-                  return <Card text={cardText} />})
-              }
-            </div>
+            <div className="list">{this.props.cards.map(function(cardText){
+                return <Card text={cardText} />})
+            }</div>
             <Form onAddInputChange={this.props.onAddInputChange} 
                   onAddSubmit={this.props.onAddSubmit} />
           </div>
          );    
    }
 }
-//class
-//props.title equals prop obj being passed
-//check for the right num of cards

@@ -16,11 +16,6 @@ describe('List Container component', function() {
         renderer.render(<ListContainer title={title}
                      cards={cards} />);
         const result = renderer.getRenderOutput();
-        // console.log("result:")
-        // console.log(result);
-        // console.log(cards);
-        // console.log(" result +++++++++++++++++++++");
-        // console.log(result.props.cards);
 
 		//check for title and check for cards props
 		result.props.title.should.equal(title);

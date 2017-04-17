@@ -37,7 +37,5 @@ export default class ListContainer extends React.Component {
             onAddSubmit={this.onAddSubmit}/>
        );
    }
-
-   //check for title and check for cards props
 }
 
