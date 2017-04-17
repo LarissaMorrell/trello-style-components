@@ -7,7 +7,7 @@ export default class ListContainer extends React.Component {
        super(props);
        this.state = {
     		text: "",
-    		cards: []
+    		cards: props.cards || []
        }
        this.onAddInputChange = this.onAddInputChange.bind(this);
        this.onAddSubmit = this.onAddSubmit.bind(this);
@@ -29,7 +29,6 @@ export default class ListContainer extends React.Component {
 
 
    render(){
-    console.log(this);
        
        return (
             <List title={this.props.title}
@@ -39,5 +38,6 @@ export default class ListContainer extends React.Component {
        );
    }
 
+   //check for title and check for cards props
 }
 

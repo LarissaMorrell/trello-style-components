@@ -12,3 +12,7 @@ export default class Card extends React.Component {
         );
     }
 }
+
+//check for div
+//check for containing correct text
+//class

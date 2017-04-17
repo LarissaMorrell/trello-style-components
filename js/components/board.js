@@ -17,7 +17,6 @@ export default class Board extends React.Component {
                <ListContainer title={this.props.lists[i]}
                      cards={cards}/> );
        }
-       console.log(lists);
 
        return (
            <div className="board">
@@ -27,3 +26,4 @@ export default class Board extends React.Component {
        );
    }
 }
+//classname

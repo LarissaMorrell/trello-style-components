@@ -16,6 +16,7 @@ export default class List extends React.Component {
    }
 
    render(){
+      console.log("props", this.props);
        return (
           <div>
             <div className="list">{this.props.title}</div>
@@ -29,3 +30,6 @@ export default class List extends React.Component {
          );    
    }
 }
+//class
+//props.title equals prop obj being passed
+//check for the right num of cards
